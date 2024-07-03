@@ -11,7 +11,7 @@ def home():
 
 @app.route("/result")
 def result():
-    return "Search Form For result goes this page!"
+    return render_template("result.html")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
