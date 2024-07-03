@@ -7,7 +7,7 @@ app.secret_key = b'__u53r!53Y13rc35'
 
 @app.route("/")
 def home():
-    return "Hello Website!"
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run()
