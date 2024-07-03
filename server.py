@@ -9,5 +9,9 @@ app.secret_key = b'__u53r!53Y13rc35'
 def home():
     return render_template("index.html")
 
+@app.route("/result")
+def result():
+    return "Search Form For result goes this page!"
+
 if __name__ == "__main__":
     app.run()
