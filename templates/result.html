@@ -2,21 +2,21 @@
 {% block title %}Result{% endblock %}
 
 {% block content %}
-<form>
+<form action="/result/" method="post">
     <div class="grid gap-6 mb-6 md:grid-cols-2">
         <div>
-            <label for="registration_no" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Registration No</label>
-            <input type="text" id="registration_no" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="18502003678" required />
+            <label for="registration" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Registration No</label>
+            <input type="number" id="registration_no" name="registration_no" maxlength="11" value="18502003678" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="18502003678" required />
         </div>
         <div>
-            <label for="exam_year" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Exam Year</label>
-            <input type="text" id="exam_year" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="2024" required />
+            <label for="eyear" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Exam Year</label>
+            <input type="number" maxlength="4" value="2024" id="exam_year" name="exam_year" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="2024" required />
         </div>
         <div>
-            <label for="semester" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Semester</label>
+            <label for="sem" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Semester</label>
             <!-- <input type="text" id="semester" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="6" required /> -->
-            <select id="semester" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-              <option selected>Choose Your Semester</option>
+            <select id="semester" name="semester" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+              <option selected disabled>Choose Your Semester</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -28,9 +28,9 @@
             </select>
         </div>  
         <div>
-          <label for="department" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Your Department</label>
-            <select id="department" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-              <option selected>Choose Your Department</option>
+          <label for="dep" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Your Department</label>
+            <select id="department" name="department" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+              <option selected disabled>Choose Your Department</option>
               <option value="1">CSE</option>
               <option value="2">ECE</option>
               <option value="3">BBA</option>

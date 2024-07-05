@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-# from flask import request, Blueprint, abort, session, redirect, url_for
+from flask import Flask, render_template, request 
+# from flask import Blueprint, abort, session, redirect, url_for
 # from jinja2 import TemplateNotFound
 
 app = Flask(__name__)
@@ -9,8 +9,21 @@ app.secret_key = b'__u53r!53Y13rc35'
 def home():
     return render_template("index.html")
 
-@app.route("/result/")
+@app.route("/result/", methods=["GET", "POST"])
 def result():
+    error = None
+    if request.method == "POST":
+        regno = request.form.get("registration_no")
+        eyear = request.form.get("exam_year")
+        sem = request.form.get("semester")
+        dep = request.form.get("department")
+        print(f"{regno}: {eyear}: {sem}: {dep}\n")
+
+        return render_template("result.html")
+        # return redirect(url_for("home"))
+    else:
+        error = "Invalid data\n"
+        print(f"Invalid data: {error}")
     return render_template("result.html")
 
 @app.route("/about/")
