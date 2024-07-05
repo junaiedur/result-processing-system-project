@@ -15,19 +15,18 @@ def result():
 
 @app.route("/about/")
 def about():
-    return "About Us!"
-
+    return render_template("about-us.html")
 @app.route("/contact/")
 def contact():
-    return "Contact Us!"
+    return render_template("contact-us.html")
 
 @app.route("/privacy-policy/")
 def privacyPolicy():
-    return "Our Privacy Policy!"
+    return render_template("privacy-policy.html")
 
 @app.route("/licencing/")
 def licencing():
-    return "Our Licencing Policy!"
+    return render_template("licence.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
