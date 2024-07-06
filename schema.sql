@@ -1,6 +1,232 @@
 drop table if exists entries;
-create table entries (
-  id integer primary key autoincrement,
-  title text not null,
-  'text' text not null
+
+create table department (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  department_name TEXT NOT NULL
 );
+create table subjects (
+  id integer primary key autoincrement,
+  subject_name TEXT NOT NULL,
+  subject_code INT NOT NULL,
+  semester INTEGER NOT NULL,
+  subject_dept INTEGER NOT NULL,
+  FOREIGN KEY(subject_dept) REFERENCES department(id)
+);
+create table students (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  full_name TEXT NOT NULL,
+  email_addr TEXT NOT NULL,
+  phone_no TEXT NOT NULL,
+  registration_no BIGINT NOT NULL,
+  department INTEGER NOT NULL,
+  FOREIGN KEY(department) REFERENCES department(id)
+);
+CREATE TABLE result_2024 (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  registration_no BIGINT NOT NULL,
+  year INTEGER NOT NULL,
+  semester INTEGER NOT NULL,
+  subject_1 INTEGER,
+  subject_2 INTEGER,
+  subject_3 INTEGER,
+  subject_4 INTEGER,
+  subject_5 INTEGER,
+  subject_6 INTEGER,
+  subject_7 INTEGER,
+  subject_8 INTEGER,
+  subject_9 INTEGER,
+  subject_10 INTEGER,
+  gpa TEXT,
+  FOREIGN KEY(registration_no) REFERENCES students(registration_no),
+  FOREIGN KEY(semester) REFERENCES subjects(semester)
+);
+CREATE TABLE result_2023 (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  registration_no BIGINT NOT NULL,
+  year INTEGER NOT NULL,
+  semester INTEGER NOT NULL,
+  subject_1 INTEGER,
+  subject_2 INTEGER,
+  subject_3 INTEGER,
+  subject_4 INTEGER,
+  subject_5 INTEGER,
+  subject_6 INTEGER,
+  subject_7 INTEGER,
+  subject_8 INTEGER,
+  subject_9 INTEGER,
+  subject_10 INTEGER,
+  gpa TEXT,
+  FOREIGN KEY(registration_no) REFERENCES students(registration_no),
+  FOREIGN KEY(semester) REFERENCES subjects(semester)
+);
+CREATE TABLE result_2022 (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  registration_no BIGINT NOT NULL,
+  year INTEGER NOT NULL,
+  semester INTEGER NOT NULL,
+  subject_1 INTEGER,
+  subject_2 INTEGER,
+  subject_3 INTEGER,
+  subject_4 INTEGER,
+  subject_5 INTEGER,
+  subject_6 INTEGER,
+  subject_7 INTEGER,
+  subject_8 INTEGER,
+  subject_9 INTEGER,
+  subject_10 INTEGER,
+  gpa TEXT,
+  FOREIGN KEY(registration_no) REFERENCES students(registration_no),
+  FOREIGN KEY(semester) REFERENCES subjects(semester)
+);
+CREATE TABLE result_2021 (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  registration_no BIGINT NOT NULL,
+  year INTEGER NOT NULL,
+  semester INTEGER NOT NULL,
+  subject_1 INTEGER,
+  subject_2 INTEGER,
+  subject_3 INTEGER,
+  subject_4 INTEGER,
+  subject_5 INTEGER,
+  subject_6 INTEGER,
+  subject_7 INTEGER,
+  subject_8 INTEGER,
+  subject_9 INTEGER,
+  subject_10 INTEGER,
+  gpa TEXT,
+  FOREIGN KEY(registration_no) REFERENCES students(registration_no),
+  FOREIGN KEY(semester) REFERENCES subjects(semester)
+);
+CREATE TABLE result_2020 (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  registration_no BIGINT NOT NULL,
+  year INTEGER NOT NULL,
+  semester INTEGER NOT NULL,
+  subject_1 INTEGER,
+  subject_2 INTEGER,
+  subject_3 INTEGER,
+  subject_4 INTEGER,
+  subject_5 INTEGER,
+  subject_6 INTEGER,
+  subject_7 INTEGER,
+  subject_8 INTEGER,
+  subject_9 INTEGER,
+  subject_10 INTEGER,
+  gpa TEXT,
+  FOREIGN KEY(registration_no) REFERENCES students(registration_no),
+  FOREIGN KEY(semester) REFERENCES subjects(semester)
+);
+CREATE TABLE result_2019 (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  registration_no BIGINT NOT NULL,
+  year INTEGER NOT NULL,
+  semester INTEGER NOT NULL,
+  subject_1 INTEGER,
+  subject_2 INTEGER,
+  subject_3 INTEGER,
+  subject_4 INTEGER,
+  subject_5 INTEGER,
+  subject_6 INTEGER,
+  subject_7 INTEGER,
+  subject_8 INTEGER,
+  subject_9 INTEGER,
+  subject_10 INTEGER,
+  gpa TEXT,
+  FOREIGN KEY(registration_no) REFERENCES students(registration_no),
+  FOREIGN KEY(semester) REFERENCES subjects(semester)
+);
+CREATE TABLE result_2018 (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  registration_no BIGINT NOT NULL,
+  year INTEGER NOT NULL,
+  semester INTEGER NOT NULL,
+  subject_1 INTEGER,
+  subject_2 INTEGER,
+  subject_3 INTEGER,
+  subject_4 INTEGER,
+  subject_5 INTEGER,
+  subject_6 INTEGER,
+  subject_7 INTEGER,
+  subject_8 INTEGER,
+  subject_9 INTEGER,
+  subject_10 INTEGER,
+  gpa TEXT,
+  FOREIGN KEY(registration_no) REFERENCES students(registration_no),
+  FOREIGN KEY(semester) REFERENCES subjects(semester)
+);
+INSERT INTO department (department_name) VALUES 
+  ('CSE'),
+  ('ECE'),
+  ('BBA'),
+  ('AMT KMT FDT');
+
+INSERT INTO subjects (subject_name, subject_code, semester, subject_dept) VALUES
+('Structured Programming Language', 510201, 1, 1),
+('Structured Programming Language Lab', 510202, 1, 1),
+('Electrical and Electronic Circuit', 510203, 1, 1),
+('Electrical and Electronic Circuit Lab', 510204, 1, 1),
+('Calculus', 510205, 1, 1),
+('Physics', 510207, 1, 1),
+('English', 510209, 1, 1),
+('Digital Systems Design', 510221, 2, 1),
+('Digital Systems Lab', 510222, 2, 1),
+('Discrete Mathematics', 510223, 2, 1),
+('Linear Algebra', 510225, 2, 1),
+('Statistics and Probability', 510227, 2, 1),
+('History of the Emergence of Independent Bangladesh', 510229, 3, 1),
+('Data Structure', 520201, 3, 1),
+('Data Structure Lab', 520202, 3, 1),
+('Object Oriented Programming', 520203, 3, 1),
+('Object Oriented Programming Lab', 520203, 3, 1),
+('Computer Architecture', 520205, 3, 1),
+('Ordinary Differential Equation', 520207, 3, 1),
+('Fundamental of Business Studies', 520209, 3, 1),
+('Database Management System', 520221, 4, 1),
+('Database Management System Lab', 520222, 4, 1),
+('Microprocessor and Assembly Language', 520223, 4, 1),
+('Microprocessor and Assembly Language Lab', 520224, 4, 1),
+('Design and Analysis of Algorithms', 520225, 4, 1),
+('Design and Analysis of Algorithms Lab', 520226, 4, 1),
+('Numerical Analysis', 520227, 4, 1),
+('Peripheral and Interfacing', 530201, 5, 1),
+('Peripheral and Interfacing Lab', 530202, 5, 1),
+('Data and Telecommunications', 530203, 5, 1),
+('Data and Telecommunications Lab', 530204, 5, 1),
+('Operating System', 530205, 5, 1),
+('Operating System Lab', 530206, 5, 1),
+('Economics', 530207, 5, 1),
+('Software Engineering', 530219, 6, 1),
+('Software Engineering Lab', 530220, 6, 1),
+('Computer Networking', 530221, 6, 1),
+('Computer Networking Lab', 530222, 6, 1),
+('Embedded System Programming', 530223, 6, 1),
+('Embedded System Programming Lab', 530224, 6, 1),
+('Theory of Computation', 530225, 6, 1),
+('Artificial Intelligence', 540201, 7, 1),
+('Artificial Intelligence Lab', 540202, 7, 1),
+('Compiler Design and Construction', 540203, 7, 1),
+('Compiler Design Lab', 540204, 7, 1),
+('Computer Graphics', 540205, 7, 1),
+('Computer Graphics Lab', 540206, 7, 1),
+('E-Commerce and Web Engineering', 540207, 7, 1),
+('E-Commerce and Web Engineering Lab', 540208, 7, 1),
+('Network and Information Security', 540219, 8, 1),
+('Network and Information Security Lab', 540220, 8, 1),
+('Information System Management', 540221, 8, 1),
+('Project/Industry Attachment', 540222, 8, 1),
+('Parallel and Distributed Systems', 540225, 8, 1);
+
+INSERT INTO students (full_name, email_addr, phone_no, registration_no, department) VALUES
+('Junaiedur Rahman', 'junaiedurrahman@gmail.com', '8394827', 18502003678, 1),
+('Jane Smith', 'jane.smith@example.com', '0987654321', 1002, 1),
+('Emily Johnson', 'emily.johnson@example.com', '1231231234', 1003, 1),
+('Michael Brown', 'michael.brown@example.com', '3213213214', 1004, 1),
+('Sarah Davis', 'sarah.davis@example.com', '4564564567', 1005, 1);
+
+
+INSERT INTO result_2024 (registration_no, year, semester, subject_1, subject_2, subject_3, subject_4, subject_5, gpa) VALUES
+(18502003678, 2024, 1, 85, 90, 80, 75, NULL, '3.8'),
+(1002, 2024, 1, 78, 85, 88, 82, NULL, '3.6'),
+(1003, 2024, 1, 92, 95, 90, 89, NULL, '3.9'),
+(1004, 2024, 1, 70, 75, 78, 72, NULL, '3.3'),
+(1005, 2024, 1, 88, 87, 85, 90, NULL, '3.7');
