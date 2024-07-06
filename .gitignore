@@ -1,0 +1,9 @@
+# igone all package*.json
+package*.json
+tailwind*.js
+# ignore all python virtual environment files
+venv*/
+# ignore all nodejs files and directories
+node*/
+static/dist/
+static/src/
